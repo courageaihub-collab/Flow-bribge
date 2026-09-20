@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function resourceOwnerMatches() {
+      return isAuthenticated() && request.auth.uid == resource.data.userId;
+    }
+    
+    function incomingOwnerMatches() {
+      return isAuthenticated() && request.auth.uid == request.resource.data.userId;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // Connections collection (paired agent and AI clients)
+    match /connections/{connectionId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+
+    // Projects collection
+    match /projects/{projectId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+
+    // Tasks collection
+    match /tasks/{taskId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+
+    // Results collection
+    match /results/{resultId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+
+    // Activity log collection
+    match /activity/{activityId} {
+      allow read: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update, delete: if false; // immutable audit log
+    }
+
+    // Settings collection
+    match /settings/{settingId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+
+    // BrowserSessions collection
+    match /browserSessions/{sessionId} {
+      allow read, delete: if resourceOwnerMatches();
+      allow create: if incomingOwnerMatches();
+      allow update: if resourceOwnerMatches() && incomingOwnerMatches();
+    }
+  }
+}

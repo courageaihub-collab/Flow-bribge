@@ -1,0 +1,22 @@
+{
+  "name": "flowbridge-agent",
+  "version": "1.0.0",
+  "description": "FlowBridge Local Browser Agent for Google Flow computer-control orchestration",
+  "main": "index.ts",
+  "bin": {
+    "flowbridge-agent": "./index.ts"
+  },
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.0.0"
+  }
+}

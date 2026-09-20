@@ -1,0 +1,6 @@
+{
+  "name": "FlowBridge",
+  "description": "Connect MCP-compatible AI chatbots to real Google Flow browser sessions with computer-control orchestration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

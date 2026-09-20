@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "User": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "email": { "type": "string", "required": true },
+        "displayName": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "Connection": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "type": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "status": { "type": "string", "required": true },
+        "lastPing": { "type": "string", "required": true },
+        "permissions": { "type": "array", "required": true }
+      }
+    },
+    "Project": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "flowUrl": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": true }
+      }
+    },
+    "Task": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "clientId": { "type": "string", "required": true },
+        "type": { "type": "string", "required": true },
+        "command": { "type": "string", "required": true },
+        "status": { "type": "string", "required": true },
+        "currentAction": { "type": "string", "required": false },
+        "progress": { "type": "number", "required": true },
+        "browserSessionId": { "type": "string", "required": false },
+        "createdAt": { "type": "string", "required": true },
+        "updatedAt": { "type": "string", "required": true },
+        "result": { "type": "object", "required": false },
+        "error": { "type": "string", "required": false }
+      }
+    },
+    "Result": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "taskId": { "type": "string", "required": true },
+        "projectId": { "type": "string", "required": false },
+        "type": { "type": "string", "required": true },
+        "mediaUrl": { "type": "string", "required": true },
+        "thumbnailUrl": { "type": "string", "required": false },
+        "prompt": { "type": "string", "required": false },
+        "aiAnalysis": { "type": "string", "required": false },
+        "status": { "type": "string", "required": true },
+        "createdAt": { "type": "string", "required": true }
+      }
+    },
+    "Activity": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "timestamp": { "type": "string", "required": true },
+        "aiClient": { "type": "string", "required": true },
+        "mcpTool": { "type": "string", "required": true },
+        "task": { "type": "string", "required": false },
+        "browserAction": { "type": "string", "required": false },
+        "result": { "type": "string", "required": false },
+        "status": { "type": "string", "required": true },
+        "durationMs": { "type": "number", "required": false },
+        "error": { "type": "string", "required": false }
+      }
+    },
+    "Settings": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "permissionLevels": { "type": "object", "required": true },
+        "dangerousActionConfirmation": { "type": "boolean", "required": true },
+        "browserConfig": { "type": "object", "required": true }
+      }
+    },
+    "BrowserSession": {
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "userId": { "type": "string", "required": true },
+        "agentId": { "type": "string", "required": true },
+        "currentUrl": { "type": "string", "required": false },
+        "status": { "type": "string", "required": true },
+        "startedAt": { "type": "string", "required": true },
+        "lastActiveAt": { "type": "string", "required": true }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "users": {
+    "usr_flowbridge_primary": {
+      "id": "usr_flowbridge_primary",
+      "email": "courageaihub@gmail.com",
+      "displayName": "Creative Operator",
+      "apiKey": "fb_key_live_9a8b7c6d5e4f3a2b1c",
+      "createdAt": "2026-09-20T12:04:07.490Z"
+    }
+  },
+  "connections": {
+    "client_chatgpt": {
+      "id": "client_chatgpt",
+      "name": "ChatGPT Plus / Team (OpenAI)",
+      "type": "chatgpt",
+      "status": "CONNECTED",
+      "permissions": [
+        "READ",
+        "CONTROL",
+        "EXECUTE"
+      ],
+      "lastActivity": "2026-09-20T12:04:15.152Z",
+      "connectedDate": "2026-09-17T12:04:07.490Z",
+      "apiKey": "fb_ai_chatgpt_live_token"
+    },
+    "client_gemini": {
+      "id": "client_gemini",
+      "name": "Gemini Pro / Flash (Google)",
+      "type": "gemini",
+      "status": "CONNECTED",
+      "permissions": [
+        "READ",
+        "CONTROL",
+        "EXECUTE"
+      ],
+      "lastActivity": "2026-09-20T11:59:07.490Z",
+      "connectedDate": "2026-09-13T12:04:07.490Z",
+      "apiKey": "fb_ai_gemini_live_token"
+    },
+    "client_claude": {
+      "id": "client_claude",
+      "name": "Claude 3.7 Sonnet (Anthropic)",
+      "type": "claude",
+      "status": "CONNECTED",
+      "permissions": [
+        "READ",
+        "CONTROL",
+        "EXECUTE"
+      ],
+      "lastActivity": "2026-09-20T11:29:07.490Z",
+      "connectedDate": "2026-09-18T12:04:07.490Z",
+      "apiKey": "fb_ai_claude_live_token"
+    }
+  },
+  "projects": {},
+  "tasks": {},
+  "results": {},
+  "activity": [
+    {
+      "id": "act_1789905859830_x8in1a",
+      "timestamp": "2026-09-20T12:04:19.830Z",
+      "userId": "usr_flowbridge_primary",
+      "aiClient": "Dashboard User",
+      "mcpTool": "EMERGENCY_STOP",
+      "browserAction": "Halted all active and queued browser actions",
+      "status": "CANCELLED"
+    }
+  ],
+  "settings": {
+    "usr_flowbridge_primary": {
+      "id": "set_primary",
+      "userId": "usr_flowbridge_primary",
+      "permissionLevels": {
+        "READ": true,
+        "CONTROL": true,
+        "EXECUTE": true
+      },
+      "dangerousActionConfirmation": true,
+      "browserConfig": {
+        "defaultCdpEndpoint": "http://127.0.0.1:9222",
+        "headless": false,
+        "viewportWidth": 1920,
+        "viewportHeight": 1080,
+        "defaultTimeoutMs": 30000,
+        "generationPollingIntervalMs": 1500
+      }
+    }
+  },
+  "browserSessions": {},
+  "agentInfo": null,
+  "pairingCodes": {
+    "FB-5R4C-YD": {
+      "code": "FB-5R4C-YD",
+      "userId": "usr_flowbridge_primary",
+      "expiresAt": 1789906757339
+    }
+  }
+}
